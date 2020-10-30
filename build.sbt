@@ -1,4 +1,3 @@
-
 ThisBuild / scalaVersion := "2.13.3"
 ThisBuild / organization := "io.github.kirill5k"
 ThisBuild / organizationName := "example"
@@ -43,7 +42,7 @@ lazy val sink = (project in file("connectors/sink"))
     libraryDependencies ++= Dependencies.sink ++ Dependencies.test,
     assembly / assemblyJarName := "kafka-connect-http-sink.jar",
     assembly / assemblyOption := (assembly / assemblyOption).value.copy(
-      includeScala = false,
+      includeScala = true,
       includeDependency = true
     ),
     assembly / assemblyMergeStrategy := {
