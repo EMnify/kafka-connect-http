@@ -40,9 +40,10 @@ lazy val sink = (project in file("connectors/sink"))
     name := "kafka-connect-http-sink",
     moduleName := "kafka-connect-http-sink",
     libraryDependencies ++= Dependencies.sink ++ Dependencies.test,
+    javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
     assembly / assemblyJarName := "kafka-connect-http-sink.jar",
     assembly / assemblyOption := (assembly / assemblyOption).value.copy(
-      includeScala = true,
+      includeScala = false,
       includeDependency = true
     ),
     assembly / assemblyMergeStrategy := {
