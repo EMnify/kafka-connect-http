@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "2.13.3"
+ThisBuild / scalaVersion := "2.12.10"
 ThisBuild / organization := "io.github.kirill5k"
 ThisBuild / organizationName := "example"
 ThisBuild / resolvers ++= Seq(
@@ -40,7 +40,6 @@ lazy val sink = (project in file("connectors/sink"))
     name := "kafka-connect-http-sink",
     moduleName := "kafka-connect-http-sink",
     libraryDependencies ++= Dependencies.sink ++ Dependencies.test,
-    javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
     assembly / assemblyJarName := "kafka-connect-http-sink.jar",
     assembly / assemblyOption := (assembly / assemblyOption).value.copy(
       includeScala = false,
